@@ -1,0 +1,25 @@
+{
+  "name": "signup_test1",
+  "version": "1.0.1",
+  "description": "npm package json install",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchped/backend-login.git"
+  },
+  "keywords": [
+    "signup"
+  ],
+  "author": "Varun Sir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/launchped/backend-login/issues"
+  },
+  "homepage": "https://github.com/launchped/backend-login#readme",
+  "devDependencies": {
+    "serverless-python-requirements": "^6.0.0"
+  }
+}

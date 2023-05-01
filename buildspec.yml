@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt -t .
+  pre_build:
+    commands:
+      - echo Validating code...
+      - python manage.py test
+  build:
+    commands:
+      - echo Packaging code...
+      - zip -r function.zip .
+  post_build:
+    commands:
+      - echo Uploading code to S3...
+      - aws s3 cp function.zip s3://signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3/function.zip
+      - echo Deploying code to Lambda...
+      - aws lambda update-function-code --function-name signup-test1-dev-hello --s3-bucket signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3 --s3-key function.zip
