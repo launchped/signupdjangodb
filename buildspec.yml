@@ -17,8 +17,8 @@ phases:
     commands:
       - echo Packaging code...
       - pip install django-storages
-      - python manage.py collectstatic # Collect static files
-      - python manage.py migrate # Run database migrations
+      - python manage.py collectstatic --noinput # Collect static files
+      - python manage.py migrate --noinput # Run database migrations
       - zip -r function.zip .
   post_build:
     commands:
