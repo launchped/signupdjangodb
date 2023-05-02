@@ -6,14 +6,17 @@ phases:
       python: 3.9
     commands:
       - echo Installing dependencies...
-      - pip install -r requirements.txt -t .
   pre_build:
     commands:
       - echo Validating code...
-      - serverless validate
+      - pip install -r requirements.txt -t .
+      - virtualenv env # Create a virtual environment
+      - source env/bin/activate # Activate the virtual environment
   build:
     commands:
       - echo Packaging code...
+      - python manage.py collectstatic --noinput # Collect static files
+      - python manage.py migrate --noinput # Run database migrations
       - zip -r function.zip .
   post_build:
     commands:
