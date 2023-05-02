@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - echo Validating code...
-      - python manage.py test
+      - serverless validate
   build:
     commands:
       - echo Packaging code...
