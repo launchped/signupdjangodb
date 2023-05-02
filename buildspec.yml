@@ -11,7 +11,7 @@ phases:
       - echo Validating code...
       - pip install -r requirements.txt -t .
       - virtualenv env # Create a virtual environment
-      - source env/Scripts/activate # Activate the virtual environment
+      - env/Scripts/activate # Activate the virtual environment
   build:
     commands:
       - echo Packaging code...
