@@ -12,7 +12,7 @@ phases:
       - pip install -r requirements.txt -t .
       - virtualenv env # Create a virtual environment
       - chmod +x env/Scripts/activate
-      - .\env\Scripts\activate # Activate the virtual environment
+      - env/Scripts/activate # Activate the virtual environment
   build:
     commands:
       - echo Packaging code...
