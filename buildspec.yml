@@ -23,6 +23,6 @@ phases:
   post_build:
     commands:
       - echo Uploading code to S3...
-      - aws s3 cp function.zip s3://signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3/function.zip
+      - aws s3 cp signup.zip s3://signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3/signup.zip
       - echo Deploying code to Lambda...
-      - aws lambda update-function-code --function-name signup-test1-dev-hello --s3-bucket signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3 --s3-key function.zip
+      - aws lambda update-function-code --function-name signup-test1-dev-hello --s3-bucket signup-test1-dev-serverlessdeploymentbucket-1lobg9t14qqz3 --s3-key signup.zip
